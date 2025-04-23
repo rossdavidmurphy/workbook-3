@@ -7,14 +7,15 @@ import java.util.Scanner;
 public class BedtimeStories {
     public static void main(String[] args) {
 
-        String stories = ("\"goldilocks\", \"hansel_and_gretel\", \"mary_had_a_little_lamb\"");
+        String stories = ("\"Goldilocks\", \"Hansel and Gretel\", \"Mary had a Little Lamb\"");
         System.out.println("Pick a Story: " + stories);
 
         Scanner input = new Scanner(System.in);
-        String story = input.nextLine();
+        String story = input.nextLine().toLowerCase().replace(" ", "_");
+
 
         try {
-            FileInputStream fis = new FileInputStream("Data/" + story + ".txt");
+            FileInputStream fis = new FileInputStream("src/Data/" + story + ".txt");
             Scanner scanner = new Scanner(fis);
 
             String line;
