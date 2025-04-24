@@ -13,7 +13,7 @@ public class App {
 
             String input;
             while ((input = bufferedReader.readLine()) != null) {
-                System.out.println(input);
+//                System.out.println(input);
 
                 String[] employeeData = input.trim().split("\\|+");
 
@@ -24,11 +24,10 @@ public class App {
 
                 Employee employee = new Employee(employeeId, employeeName, employeeHoursWorked,employeePayRate);
 
-                System.out.printf("ID: %d | Name: %-15s | Hours Worked: %6.2f | Pay Rate: $%6.2f%n",
+                System.out.printf("ID: %d | Name: %-15s | Gross Pay: $%.2f%n",
                         employee.getEmployeeId(),
                         employee.getName(),
-                        employee.getHoursWorked(),
-                        employee.getPayRate());
+                        employee.getGrossPay());
 
             }
             bufferedReader.close();
